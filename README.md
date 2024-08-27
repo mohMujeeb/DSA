@@ -4,14 +4,14 @@ Welcome to the Data Structures and Algorithms (DSA) repository! This repository 
 
 ## Notebooks Overview
 
-### 1. [Things to Know in Programming](Things%20to%20Know%20in%20Programming.ipynb)
+### 1. [Things to Know in Programming](https://github.com/mohMujeeb/DSA/blob/main/Things%20to%20know%20in%20programming.ipynb)
 This notebook covers fundamental programming concepts and is an excellent starting point for beginners. Topics include:
 - **Input Output**: The classic first step in learning a new programming language.
 - **Variables and Data Types**: Understanding how to store and manipulate data.
 - **Control Structures**: Using conditionals and loops to control the flow of programs.
 - **Functions**: Defining and calling functions to structure your code efficiently.
 
-### 2. [Know the Basic Math](Know%20the%20Basic%20Math.ipynb)
+### 2. [Know the Basic Math](https://github.com/mohMujeeb/DSA/blob/main/Know%20Basic%20Math.ipynb)
 This notebook focuses on solving basic mathematical problems that are crucial for programming and algorithmic thinking. Problems covered include:
 - **Count Digits**: Determine the number of digits in a number.
 - **Reverse a Number**: Reverse the digits of a given number.
