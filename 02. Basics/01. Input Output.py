@@ -3,3 +3,5 @@
 
 string = input("Enter a string: ")
 print(string)
+
+print("something new")
