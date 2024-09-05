@@ -1,4 +1,3 @@
-########################################
 """You are given a number. You need to count number of digits in it.
 
 Example 1:
