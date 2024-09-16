@@ -15,6 +15,8 @@ def brute_force(arr, n):
     return s_largest
 # Better approach
 def better(arr, n):
+    if n == 0 or n == 1:
+        return -1
     largest = arr[0]
     for i in range(n):
         if arr[i] > largest:
