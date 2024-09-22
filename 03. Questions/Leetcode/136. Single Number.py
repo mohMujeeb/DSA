@@ -12,8 +12,8 @@ Input: nums = [4,1,2,1,2]
 Output: 4
 
 Brute force Time Complexity: O(n^2)
-Better Time Complexity: O(N*logM) + O(M)
-Optimal Time Complexity: O(N)
+Better Time Complexity: O(N), Space Complexity: O(N)
+Optimal Time Complexity: O(N), Space Complexity: O(1)
 """
 
 # Brute force approach  
