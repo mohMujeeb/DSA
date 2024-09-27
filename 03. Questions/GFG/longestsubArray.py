@@ -1,4 +1,4 @@
-# Better Approach
+
 def better_longest(arr, k):
     n = len(arr)
     maxLen = 0
