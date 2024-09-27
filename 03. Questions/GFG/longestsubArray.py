@@ -1,26 +1,27 @@
-
-
-
-from typing import List
-#Brute Force Approach
-def getLongestSubarray(a: [int], k: int) -> int:
-    n = len(a) # size of the array.
-
-    length = 0
-    for i in range(n): # starting index
-        s = 0
-        for j in range(i, n): # ending index
-            # add the current element to the subarray a[i...j-1]:
-            s += a[j]
-
-            if s == k:
-                length = max(length, j - i + 1)
-    return length
-
+# Better Approach
+def better_longest(arr, k):
+    n = len(arr)
+    maxLen = 0
+    Sum = 0
+    preSumMax = {}
+    for i in range(n):
+        Sum += arr[i]
+        if Sum == k:
+            maxLen= max(maxLen, i + 1)
+            
+        rem = Sum-k
+        if rem in preSumMax:
+            length = i - preSumMax[rem]
+            maxLen = max(maxLen, length)
+            
+        if Sum not in preSumMax:
+            preSumMax[Sum] = i
+            
+    return maxLen
 
 a = [2, 3, 5, 1, 9]
 k = 10
-print("Brute force:")
-print(getLongestSubarray(a, k))
+print("Longest Subarray with contigous length")
+print(better_longest(a, k))
 
 
