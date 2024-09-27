@@ -2,7 +2,7 @@
 
 
 from typing import List
-
+#Brute Force Approach
 def getLongestSubarray(a: [int], k: int) -> int:
     n = len(a) # size of the array.
 
@@ -17,10 +17,10 @@ def getLongestSubarray(a: [int], k: int) -> int:
                 length = max(length, j - i + 1)
     return length
 
-if __name__ == '__main__':
-    a = [2, 3, 5, 1, 9]
-    k = 10
-    len = getLongestSubarray(a, k)
-    print("The length of the longest subarray is:", len)
+
+a = [2, 3, 5, 1, 9]
+k = 10
+print("Brute force:")
+print(getLongestSubarray(a, k))
 
 
