@@ -22,3 +22,14 @@ class Student:
     
 S1 = Student("John", 80)
 print(S1.name, S1.marks)
+
+# Attributes Class and Objects 
+
+class Employee:
+    company_name = "Tkxel" # Class Attribute
+    def __init__(self, name, salary):
+        self.name = name    # Object Attribute
+        self.salary = salary# Object Attribute
+        
+E1 = Employee("Tia", 50000)
+print(E1.company_name, E1.name, E1.salary)
