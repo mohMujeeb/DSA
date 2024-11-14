@@ -1,26 +1,17 @@
-# Class is a blueprint for creating objects 
+# Class -> A blueprint for all objects having similar attributes and behavior.
 
-# Lets create student class and print student data
-class Student:   # Blue Print
-    name = "Shushant"       # Data 
+# defining class
+class SmartPhone:
+    # constructor
+    def __init__(self, device, brand):
+        self.device = device
+        self.brand = brand
+        
+    # method of the class
+    def description(self):
+        return f"This is a {self.brand}'s {self.device}."
     
-# Lets create instance/object of student class to access student data
-obj = Student()     # Instance/Object
-print(obj.name)     
+# creating object of class
 
-
-# Lets create a Car class with some data i.e: color, brand, model 
-
-class Car:
-    color = "Red"
-    brand = "Toyota"
-    model = "Corolla"
-    
-# Lets create an instance/object of Car class to access car data
-car = Car()
-print("Car Name: ",car.color)
-print("Car Brand: ",car.brand)
-print("Car Name: ",car.model)
-
-
-
+obj = SmartPhone("S21", "Samsung")
+print(obj.description())
