@@ -43,7 +43,10 @@ print(e1.display_count())
 
 
 # Garbage collection __del__() destructor
-
+""" 
+The process by which python periodically reclaims blocks of memory that no
+longer in use is termed as Garbage Collection.
+"""
 class GarbageCollector:
     def __init__(self, x=0, y=0):
         self.x = x
@@ -61,3 +64,20 @@ gc3 = gc2
 print(id(gc1), id(gc2), id(gc3))
 
 del gc1, gc2, gc3        
+
+
+# Data Hiding in Python 
+""" 
+An object's attributes may or may not be visible outside the class definition.
+"""
+class DataHiding:
+    __secretCount = 0
+    
+    def count(self):
+        self.__secretCount += 1
+        return self.__secretCount 
+        
+obj = DataHiding()
+
+print(obj.count())  #Output -> 1
+print(obj.__secretCount)   #Output -> error
