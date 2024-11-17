@@ -80,4 +80,5 @@ class DataHiding:
 obj = DataHiding()
 
 print(obj.count())  #Output -> 1
-print(obj.__secretCount)   #Output -> error
+print(obj.count()) #Output -> 2
+print(obj._DataHiding__secretCount) #Output -> 2
