@@ -15,3 +15,49 @@ class SmartPhone:
 
 obj = SmartPhone("S21", "Samsung")
 print(obj.description())
+
+
+# Employee class with employee count, name and their salaries.
+
+class Employee:
+    emp_count = 0
+    
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+        Employee.emp_count += 1
+        
+    def display_count(self):
+        return f"Total number of employees: {Employee.emp_count}"
+    
+    def display_employee(self):
+        return f"Name: {self.name}, Salary: {self.salary}"
+    
+# Creating objects of Employee class
+e1 = Employee("John", 50000)
+e2 = Employee("Jane", 60000)
+
+print(e1.display_employee())
+print(e2.display_employee())
+print(e1.display_count())
+
+
+# Garbage collection __del__() destructor
+
+class GarbageCollector:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+    
+    def __del__(self):
+        class_name = self.__class__.__name__
+        print(class_name, "Destroyed")
+
+gc1 = GarbageCollector()
+gc2 = gc1
+gc3 = gc2
+
+# Print the ids
+print(id(gc1), id(gc2), id(gc3))
+
+del gc1, gc2, gc3        
