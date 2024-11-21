@@ -20,7 +20,7 @@ class Employee:
     
     def showcount(self):
         print(self.empCount)
-        
+    # syntax -> classmethod(instance_method)   
     counter = classmethod(showcount)
     
 e1 = Employee("Mujeeb", 21)
@@ -29,3 +29,38 @@ e2 = Employee("Saif", 24)
 print(e1.showcount)
 print()
 print(Employee.counter)
+
+
+# Using @classmethod Decorator
+""" 
+More convenient than declaring a instance method and then transforming it into 
+class method
+"""
+
+#Syntax @classmethod
+"""
+@classmethod
+def show()
+    more...
+
+"""
+
+class Student:
+    std_count = 0
+    
+    def __init__(self, name, subject):
+        self.__name = name
+        self.__subject = subject
+        
+        Student.std_count += 1
+        
+    @classmethod
+    def show_count(cls):
+        print(cls.std_count)
+        
+    @classmethod
+    def new_std(self, name, subject):
+        pass
+    
+
+        
