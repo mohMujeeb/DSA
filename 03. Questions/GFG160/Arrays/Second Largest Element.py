@@ -15,19 +15,16 @@ def getSecondLargest(arr):
     if n < 2:
         return -1
     
-    large = arr[0]
-    for i in range(n):
-        if arr[i] > large:
-            large = arr[i]
-    
+    large = -1 
     s_large = -1
     for i in range(n):
-        if arr[i] > s_large and arr[i] < large:
+        if arr[i] > large:
+            s_large = large
+            large = arr[i]
+        elif arr[i] > s_large and arr[i] < large:
             s_large = arr[i]
-            
-            
-    return s_large
+    return s_large    
 
-arr = [12, 11, 13, 5, 6, 7]
+arr = [12, 35, 1, 10, 34, 1]
 second_largest = getSecondLargest(arr)  
 print("Second largest element is:", second_largest)
