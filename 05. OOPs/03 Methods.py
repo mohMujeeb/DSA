@@ -9,7 +9,7 @@
     
 """
 
-# Class Method
+# Class Method using classmethod() function
 
 class Employee:
     empCount = 0
@@ -49,7 +49,43 @@ e1 = Student("John", 19)
 s2 = Student.new_std("Mujeeb", 21)
 print("Student Count: ",Student.show_count())   
 
+# Static Method using staticmethod() function 
+""" 
+    - does not require any instance to be called
+    - similar to class method but difference is that it does not have any
+    mandatory argument like reference to object - self and reference to 
+    class - cls
+"""
+
+class Car:
+    carCount = 0
+    def __init__(self, name, model):
+        self.__name = name
+        self.__model = model
+        Car.carCount += 1
+    # Creating a static method
+    def show_count():
+        return Car.carCount
+    
+    carCounter = staticmethod(show_count)
+    
+c1 = Car("Toyota", "Camry")
+print("Car Count: ",Car.carCounter())
 
 
+# @staticmethod
 
+class Animal:
+    animalCount = 0
+    
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+        Animal.animalCount += 1
         
+    @staticmethod
+    def show_count():
+        return Animal.animalCount
+    
+ani = Animal("Elephant", 3)
+print("Animal count", Animal.show_count())
