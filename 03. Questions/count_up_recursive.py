@@ -5,6 +5,6 @@ def count_up(n):
         return 
     count_up(n - 1)
     print(n, end=" ")
-
+    
 n = 10    
 count_up(n)
