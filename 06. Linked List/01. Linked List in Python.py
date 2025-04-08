@@ -17,6 +17,25 @@ class LinkedList:
         newNode = Node(newData)
         newNode.next = self.head
         self.head = newNode
+    
+    def endNode(self, newData):
+        newNode = Node(newData)
+        if self.head is None:
+            self.head = newNode
+            return
+        lastNode = self.head
+        while lastNode.next:
+            lastNode = lastNode.next
+        lastNode.next = newNode
+
+    def inBetweenNode(self, prevNode, newData):
+        if prevNode is None:
+            print("The given previous node cannot be NULL.")
+            return
+        newNode = Node(newData)
+        newNode.next = prevNode.next 
+        prevNode.next = newNode
+
 
 # Create LinkedList and Nodes
 node1 = LinkedList()
@@ -36,7 +55,9 @@ node1.linkedListPrint()
 
 # Add new node to the front
 node1.addNode(25)
+node1.endNode(30)
+node1.inBetweenNode(node2, 12)
 
 # Print updated Linked List
-print("\nUpdated Linked List after adding 25 at the beginning:")
+print("\nUpdated Linked List after adding 25 at the beginning and 30 at the end:")
 node1.linkedListPrint()
