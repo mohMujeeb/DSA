@@ -6,12 +6,24 @@ class ATM:
        Constructor is special method on which user have no control - all the functionalities in the constructor are pre-defined -
        and run automatically when user open an application"""
     def __init__(self):
-        self.pin = ""
-        self.balance = 0.0
 
-        self.menu()
+        """Instance Varibales-
+        A variable whose value is different for each object is called instance variable -"""
+
+        """Access Modifiers in Python-
+        1. Public - accessible from anywhere in the code -
+        2. Private - accessible only within the class - denoted by double underscore (__)
+        3. Protected - accessible within the class and its subclasses - denoted by single underscore (_)"""
+        self.__pin = "1234"
+        self.__balance = 0.0
+
+
+        """When we use __ double underscore, python change that variable name to _ClassName__VariableName -
+        for example - __pin will be changed to _ATM__pin - and __balance will be changed to _ATM__balance -
+        So, we can access these variables using _ClassName__VariableName - which are made private -"""
+        self.__menu()
     
-    def menu(self):
+    def __menu(self):
         user_input = input("""
         Welcome to the ATM!
         1. Enter 1 to create pin
@@ -34,8 +46,8 @@ class ATM:
 
     """Method to create pin"""
     def create_pin(self):
-        self.pin = input("Enter a 4 digit pin: ")
-        if len(self.pin) == 4 and self.pin.isdigit():
+        self.__pin = input("Enter a 4 digit pin: ")
+        if len(self.__pin) == 4 and self.__pin.isdigit():
             print("Pin set successffully!")
         else:
             print("Invalid pin! Please enter a 4 digit number.")
@@ -44,11 +56,11 @@ class ATM:
     """Method to deposit money"""
     def deposit(self):
         check_pin = input("Enter pin: ")
-        if check_pin == self.pin:
+        if check_pin == self.__pin:
             print("Pin verified successfully!")
             amount = float(input("Enter amount to deposit: "))
             if amount > 0:
-                self.balance += amount
+                self.__balance += amount
                 print(f"Deposited: {amount}")
             else:
                 print("Invalid deposit amount!")
@@ -59,11 +71,11 @@ class ATM:
     """Method to withdraw money"""
     def withdraw(self):
         check_pin = input("Enter pin: ")
-        if check_pin == self.pin:
+        if check_pin == self.__pin:
             print("Pin verified successfully!")
             amount = float(input("Enter amount to withdraw: "))
-            if amount < self.balance:
-                self.balance -= amount
+            if amount < self.__balance:
+                self.__balance -= amount
                 print(f"Withdrawn: {amount}")
             else:
                 print("Insufficient balance!")
@@ -74,9 +86,9 @@ class ATM:
     """Method to check balance"""
     def check_balance(self):
         check_pin = input("Enter pin: ")
-        if check_pin == self.pin:
+        if check_pin == self.__pin:
             print("Pin verified successfully!")
-            print(f"Your balance is: {self.balance}")
+            print(f"Your balance is: {self.__balance}")
         else:
             print("Incorrect pin!")
             self.check_balance()
